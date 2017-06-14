@@ -10,7 +10,7 @@
 struct errors_type
 {
 	char msg[ERROR_STR_SIZE];
-	int	error_num;
+	int error_num;
 };
 
 typedef struct errors_type *ERRORS;
