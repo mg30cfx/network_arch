@@ -11,7 +11,7 @@ int write_errors(void)
 int write_logfile(void)
 {
 	openlog(NULL, LOG_PID|LOG_CONS, LOG_USER);
-	syslog(LOG_INFO, "-> network program <- started and stopped");
+	syslog(LOG_INFO, errors_handler->msg);
 	closelog();
 
 	return EXIT_SUCCESS;

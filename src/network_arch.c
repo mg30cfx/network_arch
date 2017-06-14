@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
-#include <pcap.h>
+#include <string.h>
 
 #include "memory.h"
 #include "errors.h"
@@ -20,6 +19,8 @@ int main(void) {
 	sottrazione();
 	printf("result: %d\n", memory_handler->result);
 
+	memset(errors_handler->msg, 0, ERROR_STR_SIZE);
+	strncpy(errors_handler->msg, "-> network program <- started and stopped", ERROR_STR_SIZE);
 	write_logfile();
 
 	free(memory_handler);
