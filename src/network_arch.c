@@ -5,7 +5,18 @@
 #include "memory.h"
 #include "errors.h"
 
-int main(void) {
+#ifdef __linux
+	char *os = "linux";
+#else
+	char *os = "other";
+#endif
+
+void help(void)
+{
+
+}
+
+int main(int argc, char *argv[]) {
 
 	memory_handler = malloc(sizeof(struct memory_type));
 	errors_handler = malloc(sizeof(struct errors_type));
