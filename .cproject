@@ -34,11 +34,11 @@
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.734471661" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.492548232" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug">
-								<option id="gnu.c.link.option.paths.359942209" superClass="gnu.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include/"/>
+								<option id="gnu.c.link.option.paths.359942209" name="Library search path (-L)" superClass="gnu.c.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0"/>
 								</option>
-								<option id="gnu.c.link.option.libs.1907315054" superClass="gnu.c.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include/"/>
+								<option id="gnu.c.link.option.libs.1907315054" name="Libraries (-l)" superClass="gnu.c.link.option.libs" useByScannerDiscovery="false" valueType="libs">
+									<listOptionValue builtIn="false" value="glib-2.0"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1782230012" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
@@ -47,9 +47,7 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.91700993" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.778093340" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
-								<option id="gnu.both.asm.option.include.paths.222269757" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
-								</option>
+								<option id="gnu.both.asm.option.include.paths.222269757" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" useByScannerDiscovery="false" valueType="includePath"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.877718376" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
@@ -89,15 +87,16 @@
 								<option id="gnu.c.compiler.exe.release.option.debugging.level.1361525998" name="Debug Level" superClass="gnu.c.compiler.exe.release.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.none" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.1692201202" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="/usr/include/glib-2.0"/>
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include/"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.1175407654" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.release.1968028174" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.release">
-								<option id="gnu.c.link.option.paths.1986191332" superClass="gnu.c.link.option.paths" valueType="libPaths">
-									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include/"/>
+								<option id="gnu.c.link.option.paths.1986191332" name="Library search path (-L)" superClass="gnu.c.link.option.paths" valueType="libPaths">
+									<listOptionValue builtIn="false" value="/usr/lib/x86_64-linux-gnu/glib-2.0"/>
 								</option>
-								<option id="gnu.c.link.option.libs.608496754" superClass="gnu.c.link.option.libs" valueType="libs">
-									<listOptionValue builtIn="false" srcPrefixMapping="" srcRootPath="" value="/usr/lib/x86_64-linux-gnu/glib-2.0/include/"/>
+								<option id="gnu.c.link.option.libs.608496754" name="Libraries (-l)" superClass="gnu.c.link.option.libs" valueType="libs">
+									<listOptionValue builtIn="false" value="glib-2.0"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.linker.input.1327834419" superClass="cdt.managedbuild.tool.gnu.c.linker.input">
 									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>

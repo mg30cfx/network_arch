@@ -19,4 +19,3 @@ int read_config()
 
 	return EXIT_SUCCESS;
 }
-
