@@ -4,6 +4,7 @@
 
 #include "memory.h"
 #include "errors.h"
+#include "config.h"
 
 #ifdef __linux
 	char *os = "linux";
@@ -20,6 +21,9 @@ int main(int argc, char *argv[]) {
 
 	memory_handler = malloc(sizeof(struct memory_type));
 	errors_handler = malloc(sizeof(struct errors_type));
+	net_cfg_handler = malloc(sizeof(struct net_conf));
+
+	read_config();
 
 	set_memory(1, 10);
 	somma();
@@ -36,6 +40,7 @@ int main(int argc, char *argv[]) {
 
 	free(memory_handler);
 	free(errors_handler);
+	free(net_cfg_handler);
 
 	return EXIT_SUCCESS;
 }
