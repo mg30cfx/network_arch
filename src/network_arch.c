@@ -2,9 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "memory.h"
-#include "errors.h"
-#include "config.h"
+#include "network_arch.h"
 
 #ifdef __linux
 	char *os = "linux";
@@ -19,28 +17,19 @@ void help(void)
 
 int main(int argc, char *argv[]) {
 
-	memory_handler = malloc(sizeof(struct memory_type));
-	errors_handler = malloc(sizeof(struct errors_type));
-	net_cfg_handler = malloc(sizeof(struct net_conf));
+	memory_handler = new_mem_handler();
+	errors_handler = new_err_handler();
+	net_cfg_handler = new_netconf_handler();
 
-	read_config();
+	read_net_config(net_cfg_handler);
 
-	set_memory(1, 10);
-	somma();
-	printf("result: %d\n", memory_handler->result);
+	set_memory(memory_handler, 1, 10);  // TEST !
 
+	write_logfile(errors_handler, "-> network program <- started and stopped");
 
-	set_memory(10, 31);
-	sottrazione();
-	printf("result: %d\n", memory_handler->result);
-
-	memset(errors_handler->msg, 0, ERROR_STR_SIZE);
-	strncpy(errors_handler->msg, "-> network program <- started and stopped", ERROR_STR_SIZE);
-	write_logfile();
-
-	free(memory_handler);
-	free(errors_handler);
-	free(net_cfg_handler);
+	delete_netconf_handler(net_cfg_handler);
+	delete_err_handler(errors_handler);
+	delete_mem_handler(memory_handler);
 
 	return EXIT_SUCCESS;
 }

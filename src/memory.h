@@ -1,6 +1,10 @@
 #ifndef MEMORY_H_
 #define MEMORY_H_
 
+/*
+ * Object struct definition
+ */
+
 struct memory_type
 {
 	int num_a;
@@ -8,12 +12,15 @@ struct memory_type
 	int result;
 };
 
-typedef struct memory_type *SUM;
+typedef struct memory_type *MEMORY;
 
-SUM memory_handler;
+/*
+ * Function prototype
+ *
+ */
 
-void set_memory(int v1, int v2);
-void somma(void);
-void sottrazione(void);
+MEMORY new_mem_handler(void);
+void delete_mem_handler(MEMORY memory_handler);
+int set_memory(MEMORY memory_handler, int v1, int v2);
 
 #endif /* MEMORY_H_ */

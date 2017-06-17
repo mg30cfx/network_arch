@@ -3,15 +3,32 @@
 
 #include "errors.h"
 
-int write_errors(void)
+/*
+ * Object constructor
+ */
+
+ERRORS new_err_handler(void)
 {
-	return EXIT_SUCCESS;
+	return malloc(sizeof(struct errors_type));
 }
 
-int write_logfile(void)
+/*
+ * Object destructor
+ */
+
+void delete_err_handler(ERRORS errors_handler)
+{
+	free(errors_handler);
+}
+
+/*
+ * Write errors on log file
+ */
+
+int write_logfile(ERRORS errors_handler, char *msg)
 {
 	openlog(NULL, LOG_PID|LOG_CONS, LOG_USER);
-	syslog(LOG_INFO, errors_handler->msg, ERROR_STR_SIZE);
+	syslog(LOG_INFO, msg, ERROR_STR_SIZE);
 	closelog();
 
 	return EXIT_SUCCESS;

@@ -3,18 +3,33 @@
 
 #include "memory.h"
 
-void set_memory(int v1, int v2)
+/*
+ *	Object constructor
+ */
+
+MEMORY new_mem_handler(void)
+{
+	return malloc(sizeof(struct memory_type));
+}
+
+/*
+ * Object destructor
+ */
+
+void delete_mem_handler(MEMORY memory_handler)
+{
+	free(memory_handler);
+}
+
+/*
+ * Set memory with custom values
+ */
+
+int set_memory(MEMORY memory_handler, int v1, int v2)
 {
 	memory_handler->num_a = v1;
 	memory_handler->num_b = v2;
+
+	return EXIT_SUCCESS;
 }
 
-void somma(void)
-{
-	memory_handler->result = memory_handler->num_a + memory_handler->num_b;
-}
-
-void sottrazione(void)
-{
-	memory_handler->result = memory_handler->num_a - memory_handler->num_b;
-}
