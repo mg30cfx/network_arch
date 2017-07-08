@@ -4,16 +4,12 @@
 
 #include "network_arch.h"
 
-#ifdef __linux
-	char *os = "linux";
-#else
-	char *os = "other";
-#endif
-
 void help(void)
 {
-
+	printf("print help on screen\n");
 }
+
+
 
 int main(int argc, char *argv[]) {
 
