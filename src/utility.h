@@ -5,11 +5,19 @@
  * Macro to define os version
  */
 
-#if defined(_WIN32)
-    #define PLATFORM_NAME "windows" // Windows
+#if defined(_WIN32)	// Windows
+	#if WINVER==0x0501 // XP
+		#define PLATFORM_NAME "windowsXP"
+	#elif WINVER==0x0701 // 7
+    	#define PLATFORM_NAME "windows7"
+	#endif
 
 #elif defined(_WIN64)
-    #define PLATFORM_NAME "windows" // Windows
+	#if WINVER==0x0501 // XP
+		#define PLATFORM_NAME "windowsXP"
+	#elif WINVER==0x0701 // 7
+    	#define PLATFORM_NAME "windows7"
+	#endif
 
 #elif defined(__CYGWIN__) && !defined(_WIN32)
     #define PLATFORM_NAME "windows" // Windows (Cygwin POSIX under Microsoft Window)
@@ -48,9 +56,15 @@
 #endif
 
 /*
+ * General define
+ */
+
+/*
  * Function prototype
  */
 
 char *get_platform_name(void);
+int check_file_exist(char *path);
+void get_sys_info(void);
 
 #endif /* UTILITY_H_ */
