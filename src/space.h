@@ -1,5 +1,5 @@
-#ifndef NETWORK_ARCH_H_
-#define NETWORK_ARCH_H_
+#ifndef SPACE_H_
+#define SPACE_H_
 
 #include "memory.h"
 #include "errors.h"
@@ -44,4 +44,4 @@ PATH_CONFIG path_cfg_handler;
 
 int cmdline_parser(int argc, char *argv[], CMDLINE_PARAMS cmdl_hand);
 
-#endif /* NETWORK_ARCH_H_ */
+#endif /* SPACE_H_ */

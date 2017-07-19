@@ -1,10 +1,11 @@
+#include "space.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
 #include <unistd.h>
 
-#include "network_arch.h"
 #include "utility.h"
 
 /*
@@ -121,7 +122,7 @@ int main(int argc, char *argv[]) {
 	 * Create error and info handler
 	 */
 	errors_handler = new_err_handler();
-	write_logfile(errors_handler, "-> network program started");
+	write_logfile(errors_handler, "-> space started");
 	/*
 	 * Now, parse INI file and retrieve all configuration parameters
 	 */
@@ -140,7 +141,7 @@ int main(int argc, char *argv[]) {
 
 	free(cmdline_handler);
 
-	write_logfile(errors_handler, "-> network program stopped");
+	write_logfile(errors_handler, "-> space stopped");
 	delete_err_handler(errors_handler);
 
 	return EXIT_SUCCESS;
